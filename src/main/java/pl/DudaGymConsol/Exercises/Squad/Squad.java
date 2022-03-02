@@ -1,4 +1,4 @@
-package pl.DudaGymConsol.Exercises;
+package pl.DudaGymConsol.Exercises.Squad;
 
 public class Squad {
     private String name;

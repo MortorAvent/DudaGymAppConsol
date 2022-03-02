@@ -1,4 +1,4 @@
-package pl.DudaGymConsol.Exercises;
+package pl.DudaGymConsol.Exercises.DeadLift;
 
 public class DeadLift {
     private String name;
