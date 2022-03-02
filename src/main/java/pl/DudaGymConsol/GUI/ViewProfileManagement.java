@@ -25,7 +25,7 @@ public class ViewProfileManagement {
             int chooseOption = scanner.nextInt();
 
             switch(chooseOption){
-                case 1 -> trainingPlanService.addToListExercises();
+                case 1 -> trainingPlanService.addExercisesToList();
                 case 2 -> System.out.println("Wyświetl ćwiczenia");
                 case 3 -> trainingPlanService.displayTrainingPlan();
                 case 0 -> continueLoops = false;

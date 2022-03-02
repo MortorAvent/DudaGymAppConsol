@@ -6,7 +6,6 @@ import java.util.Scanner;
 
 public class DeadLiftService {
     List<DeadLift> deadLiftPropertise = new ArrayList<>();
-    List<Exercises> ExercisesList = new ArrayList<>();
     Scanner scanner = new Scanner(System.in);
 
     public void addDeadLift(){

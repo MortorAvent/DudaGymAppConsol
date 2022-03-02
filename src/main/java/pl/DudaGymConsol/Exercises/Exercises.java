@@ -5,9 +5,10 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Exercises {
-  List<Exercises> ExercisesList = new ArrayList<>();
   Scanner scanner = new Scanner(System.in);
   DeadLiftService deadLiftService =  new DeadLiftService();
+  SquadService squadService = new SquadService();
+
 
 
 
@@ -16,6 +17,7 @@ public class Exercises {
     while(continueLoops) {
       System.out.println("Wybierz ćwiczenie: ");
       System.out.println("1. Martwy Ciąg");
+      System.out.println("2. Przysiad");
       System.out.println("0. Wstecz");
 
       int chooseOption = scanner.nextInt();
@@ -23,10 +25,10 @@ public class Exercises {
       switch (chooseOption){
 
         case 1 -> deadLiftService.addDeadLift();
+        case 2 -> squadService.addSquad();
         case 0 -> continueLoops = false;
 
       }
     }
   }
-
 }
