@@ -48,8 +48,5 @@ public class ProfileRepository {
         fileWriter.flush();
         fileWriter.close();
     }
-    void deleteProfile(){
 
-
-    }
 }

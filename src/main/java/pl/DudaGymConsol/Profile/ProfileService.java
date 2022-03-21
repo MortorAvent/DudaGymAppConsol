@@ -1,5 +1,6 @@
 package pl.DudaGymConsol.Profile;
 
+import org.w3c.dom.ranges.Range;
 import pl.DudaGymConsol.GUI.ViewProfileManagement;
 
 import java.io.IOException;
@@ -35,9 +36,11 @@ public class ProfileService {
 
     public void deleteProfile(){
         int j = 1;
+        int i = 1;
         boolean continueLoops = true;
 
         System.out.println("Wybierz profil do usunięcia");
+
 
         while (continueLoops) {
             for (Profile profiles : repository.profiles) {
@@ -45,11 +48,21 @@ public class ProfileService {
                 System.out.println(profiles.getName() + " " + profiles.getSurname());
                 j++;
             }
+            System.out.println("0. Wstecz");
             int chooseOption = scanner.nextInt();
             switch (chooseOption) {
-                case 1 -> repository.profiles.remove(0);
-                case 2 -> repository.profiles.remove(1);
-                case 3 -> repository.profiles.remove(2);
+                case 1 ->{
+                    repository.profiles.remove(1);
+                    continueLoops = false;
+                }
+                case 5 -> {
+                    repository.profiles.remove(5);
+                    continueLoops = false;
+                }
+                case 6 -> {
+                    repository.profiles.remove(6);
+                    continueLoops = false;
+                }
                 case 0 -> continueLoops = false;
             }
         }
