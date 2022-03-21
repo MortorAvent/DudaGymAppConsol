@@ -1,16 +1,19 @@
 package pl.DudaGymConsol.GUI;
 
+import pl.DudaGymConsol.Exercises.ExercisesService;
 import pl.DudaGymConsol.Profile.ProfileService;
 
 import java.util.Scanner;
 
 public class ViewMain {
     ProfileService profileService = new ProfileService();
+    ExercisesService exercisesService = new ExercisesService();
     Scanner scanner = new Scanner(System.in);
 
 
     public ViewMain() {
         this.profileService.readAll();
+        this.exercisesService.readAllExercises();
         System.out.println("Wybierz Opcję: ");
 
         boolean continueLoops = true;

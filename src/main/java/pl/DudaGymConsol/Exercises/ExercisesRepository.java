@@ -18,19 +18,19 @@ public class ExercisesRepository {
     Exercises createNewExercises(String name, int set, int reps, int weight){
         Exercises newExercises = new Exercises(name,set,reps,weight);
         this.exercisesList.add(newExercises);
-        System.out.println("Utworzyłem nowe ćwiczenie: "+name);
+        System.out.println("Utworzyłem nowe ćwiczenie: "+newExercises.getName());
         return newExercises;
     }
 
     void readAllExercises(){
         Gson gson = new Gson();
         try {
-            FileReader fileReader = new FileReader("./training_plan.json");
-            List<Exercises> loadedExercises = gson.fromJson(fileReader, new TypeToken<List<Profile>>() {
+            FileReader fileReader = new FileReader("./exercises.json");
+            List<Exercises> loadedExercises = gson.fromJson(fileReader, new TypeToken<List<Exercises>>() {
             }.getType());
             this.exercisesList.addAll(loadedExercises);
-            this.exercisesList.forEach(profile -> {
-                System.out.println("Załadowano Plan: " + profile.getName() + " " + profile.getSet() + " " + profile.getReps() + " " + profile.getWeight());
+            this.exercisesList.forEach(exercises -> {
+                System.out.println("Załadowano ćwiczenia: " + exercises.getName() );
             });
         } catch (FileNotFoundException e) {
             System.out.println("Problem");
@@ -38,7 +38,7 @@ public class ExercisesRepository {
     }
     void saveAllExercises() throws IOException {
         Gson gson = new Gson();
-        FileWriter fileWriter = new FileWriter("./training_plan.json");
+        FileWriter fileWriter = new FileWriter("./exercises.json");
         gson.toJson(this.exercisesList, fileWriter);
         fileWriter.flush();
         fileWriter.close();

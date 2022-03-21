@@ -1,6 +1,5 @@
 package pl.DudaGymConsol.Profile;
 
-import org.w3c.dom.ranges.Range;
 import pl.DudaGymConsol.GUI.ViewProfileManagement;
 
 import java.io.IOException;
@@ -52,17 +51,18 @@ public class ProfileService {
             int chooseOption = scanner.nextInt();
             switch (chooseOption) {
                 case 1 ->{
+                    repository.profiles.remove(0);
+                    continueLoops = false;
+                }
+                case 2 -> {
                     repository.profiles.remove(1);
                     continueLoops = false;
                 }
-                case 5 -> {
-                    repository.profiles.remove(5);
+                case 3 -> {
+                    repository.profiles.remove(2);
                     continueLoops = false;
                 }
-                case 6 -> {
-                    repository.profiles.remove(6);
-                    continueLoops = false;
-                }
+
                 case 0 -> continueLoops = false;
             }
         }

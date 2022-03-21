@@ -1,5 +1,6 @@
 package pl.DudaGymConsol.Exercises;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class ExercisesService {
@@ -29,4 +30,15 @@ public class ExercisesService {
 
         }
    }
+    public void readAllExercises(){
+        this.exercisesRepository.readAllExercises();
+
+    }
+    public void saveAllExercises(){
+        try {
+            this.exercisesRepository.saveAllExercises();
+        } catch (IOException e) {
+            System.out.println("Problem");
+        }
+    }
 }
